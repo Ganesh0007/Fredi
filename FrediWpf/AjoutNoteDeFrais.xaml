@@ -1,0 +1,55 @@
+﻿<Page x:Class="FrediWpf.AjoutNoteDeFrais"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FrediWpf"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AjoutNoteDeFrais">
+
+	<Grid>
+		<TextBlock HorizontalAlignment="Left" Margin="56,41,0,0" TextWrapping="Wrap" Text="Ajouter une note de frais" VerticalAlignment="Top" Height="65" Width="466" FontFamily="Nueva Std Cond" FontSize="48"/>
+
+		<Button Content="Date" HorizontalAlignment="Left" Margin="56,160,0,0" VerticalAlignment="Top" Width="142"/>
+		<DatePicker Name="Date" HorizontalAlignment="Left" Margin="227,157,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="25" Width="122">
+			<DatePicker.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform/>
+					<SkewTransform/>
+					<RotateTransform Angle="0.078"/>
+					<TranslateTransform/>
+				</TransformGroup>
+			</DatePicker.RenderTransform>
+		</DatePicker>
+
+		<Button Content="Motif" HorizontalAlignment="Left" Margin="56,200,0,0" VerticalAlignment="Top" Width="142"/>
+		<TextBox Name="Motif" HorizontalAlignment="Left" Height="23" Margin="230,197,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+		<Button Content="Trajet" HorizontalAlignment="Left" Margin="56,239,0,0" VerticalAlignment="Top" Width="142"/>
+		<TextBox Name="Trajet" HorizontalAlignment="Left" Height="23" Margin="230,236,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+		<Button Content="Nombre de Kilomètre" HorizontalAlignment="Left" Margin="56,280,0,0" VerticalAlignment="Top" Width="142" Height="24"/>
+		<TextBox Name="Km" HorizontalAlignment="Left" Height="23" Margin="230,280,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+		<Button Content="Cout du péage" HorizontalAlignment="Left" Margin="467,160,0,0" VerticalAlignment="Top" Width="129"/>
+		<TextBox Name="Peage" HorizontalAlignment="Left" Height="23" Margin="636,160,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+		<Button Content="Cout du repas" HorizontalAlignment="Left" Margin="467,200,0,0" VerticalAlignment="Top" Width="129"/>
+		<TextBox Name="Repas" HorizontalAlignment="Left" Height="23" Margin="636,197,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,-0.087"/>
+
+		<Button Content="Cout de l'hébergement" HorizontalAlignment="Left" Margin="467,239,0,0" VerticalAlignment="Top" Width="129"/>
+		<TextBox Name="Herbergement" HorizontalAlignment="Left" Height="23" Margin="636,239,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+		<Button Name="Justif_Btn" Content="Joindre un justificatif" HorizontalAlignment="Left" Margin="467,280,0,0" VerticalAlignment="Top" Width="129" Height="23" Click="Justif_Btn_Click" />
+		<TextBox Name="JustifText" HorizontalAlignment="Left" Height="23" Margin="636,280,0,0"  VerticalAlignment="Top" Width="120"/>
+		
+		<Button Content="Envoyer mon dossier " HorizontalAlignment="Left" Margin="294,376,0,0" VerticalAlignment="Top" Width="200" Height="24" Click="Envoyer"/>
+
+	</Grid>
+
+
+		
+	
+	
+</Page>
