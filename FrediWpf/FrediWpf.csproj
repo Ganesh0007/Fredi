@@ -81,20 +81,20 @@
     <Compile Include="AdminNoteDeFrais.xaml.cs">
       <DependentUpon>AdminNoteDeFrais.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AdminTableau.xaml.cs">
-      <DependentUpon>AdminTableau.xaml</DependentUpon>
-    </Compile>
     <Compile Include="AffichageNoteDeFrais.xaml.cs">
       <DependentUpon>AffichageNoteDeFrais.xaml</DependentUpon>
     </Compile>
     <Compile Include="AjoutNoteDeFrais.xaml.cs">
       <DependentUpon>AjoutNoteDeFrais.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ATDB.xaml.cs">
+      <DependentUpon>ATDB.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Contact.xaml.cs">
       <DependentUpon>Contact.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TableauDeBord.xaml.cs">
-      <DependentUpon>TableauDeBord.xaml</DependentUpon>
+    <Compile Include="TDB.xaml.cs">
+      <DependentUpon>TDB.xaml</DependentUpon>
     </Compile>
     <Page Include="Admin.xaml">
       <SubType>Designer</SubType>
@@ -104,15 +104,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AdminTableau.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="AffichageNoteDeFrais.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AjoutNoteDeFrais.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ATDB.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -139,7 +139,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TableauDeBord.xaml">
+    <Page Include="TDB.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -183,6 +183,9 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

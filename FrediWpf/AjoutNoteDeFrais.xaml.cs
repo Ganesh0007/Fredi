@@ -18,6 +18,8 @@ using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using FrediWpf.Model;
 using Microsoft.Win32;
+using System.IO;
+
 
 namespace FrediWpf
 {
@@ -49,47 +51,83 @@ namespace FrediWpf
                 sFilleNames = sFilleNames.Substring(1);
 
                 JustifText.Text = sFilleNames;
-
+                
             }
+/*
+            string pathDoc = "Mon/Dossier/de/stockage";
+            string FileName = FileUploaddoc.FileName; //On récupère le nom du fichier
+
+            if (FileUploaddoc.HasFile)
+            {
+
+                FileUploadIdentite.SaveAs(pathDoc + FileName); //On enregistre le fichier (on pourra le supprimer ensuite)
+                byte[] FichierBin = GetFichier(pathDoc + FileName);
+            }
+            //FichierBin est prêt à être enregistrer en BDD
+            //FIX it : Requete insert du fichier (qui dépendra de votre système de gestion de vos données
+            */
+
+
         }
-        
+
+        private byte[] GetFichier(string filePath)
+        {
+            FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            byte[] fichier = br.ReadBytes((int)fs.Length);
+            br.Close();
+            fs.Close();
+            return fichier;
+        }
+
 
 
         private void Envoyer(object sender, RoutedEventArgs e)
         {
+            /// Connexion vers la BDD
+            /// 
+
+            BDD bdd = new BDD();
+            var bddConn = bdd.connection;
+
             try
             {
-                BDD bdd = new BDD();
-                var bddConn = bdd.connection;
-                string myInsertQuery = "INSERT INTO `lignesdefrais` (`Date`, `Journey`, `TotalKm`, `CostToll`, `CostLunches`, `CostAccommodation`) VALUES ("+Date.Text+","+Motif.Text+","+Trajet.Text+","+Km.Text+","+Peage.Text+","+Repas.Text+","+Herbergement.Text+")";
-                MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
-                myCommand.Connection = bddConn;
                 bddConn.Open();
-                myCommand.ExecuteNonQuery();
-                myCommand.Connection.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Erreur de connection à la Bases de Donées. Si l'erreur pérciste contactez nous : contact@m2l-asso.fr.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
 
 
-                /* MySqlCommand mySqlCmd = new MySqlCommand("lignesdefrais", bddConn);
-                 mySqlCmd.CommandType = CommandType.StoredProcedure;
-                 mySqlCmd.Parameters.AddWithValue("Date", Date.Text.Trim());
-                 mySqlCmd.Parameters.AddWithValue("Reason", Motif.Text.Trim());
-                 mySqlCmd.Parameters.AddWithValue("Journey", Trajet.Text.Trim());
-                 mySqlCmd.Parameters.AddWithValue("TotalKm", Km.Text.Trim());
-                 mySqlCmd.Parameters.AddWithValue("CostToll", Peage.Text.Trim());
-                 mySqlCmd.Parameters.AddWithValue("CostLunches", Repas.Text.Trim());
-                 mySqlCmd.Parameters.AddWithValue("CostAccommodation", Herbergement.Text.Trim());
-                 mySqlCmd.ExecuteScalar();*/
-
-
+            try
+            {
+                string InsertQuery = "INSERT INTO lignesdefrais (Date, Journey, TotalKm, CostToll, CostLunches, CostAccommodation`) VALUES (" + Date.Text + "," + Motif.Text + "," + Trajet.Text + "," + Km.Text + "," + Peage.Text + "," + Repas.Text + "," + Herbergement.Text + ")";
+                MySqlCommand InsertCmd = new MySqlCommand(InsertQuery, bddConn);
+                InsertCmd.ExecuteNonQuery();
                 MessageBox.Show("Votre demande est envoyé, elle sera traité dans les plus brefs délai.", "Informations", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message, "Information", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
     }
 }
+
+
+
+/*      Autre Méthode d'Insersation 
+ * MySqlCommand mySqlCmd = new MySqlCommand("lignesdefrais", bddConn);
+ * mySqlCmd.CommandType = CommandType.StoredProcedure;
+ * mySqlCmd.Parameters.AddWithValue("Date", Date.Text.Trim());
+ * mySqlCmd.Parameters.AddWithValue("Reason", Motif.Text.Trim());
+ * mySqlCmd.Parameters.AddWithValue("Journey", Trajet.Text.Trim());
+ * mySqlCmd.Parameters.AddWithValue("TotalKm", Km.Text.Trim());
+ * mySqlCmd.Parameters.AddWithValue("CostToll", Peage.Text.Trim());
+ * mySqlCmd.Parameters.AddWithValue("CostLunches", Repas.Text.Trim());
+ * mySqlCmd.Parameters.AddWithValue("CostAccommodation", Herbergement.Text.Trim());
+ * mySqlCmd.ExecuteScalar();
+ */

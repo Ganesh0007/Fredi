@@ -16,13 +16,19 @@ using System.Windows.Shapes;
 namespace FrediWpf
 {
     /// <summary>
-    /// Logique d'interaction pour AdminTableau.xaml
+    /// Logique d'interaction pour ATDB.xaml
     /// </summary>
-    public partial class AdminTableau : Page
+    public partial class ATDB : Page
     {
-        public AdminTableau()
+        public ATDB()
         {
             InitializeComponent();
+        }
+
+        private void NDF(object sender, RoutedEventArgs e)
+        {
+            AdminNoteDeFrais ANDF = new AdminNoteDeFrais();
+            Content = ANDF;
         }
     }
 }

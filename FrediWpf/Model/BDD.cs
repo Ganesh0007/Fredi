@@ -57,7 +57,7 @@ namespace FrediWpf.Model
         
         public string PassMail()
         {
-            string PassMail = "notifm2L";
+            string PassMail = "notifm2L";       // Mettre le passxord pour l'addresse de notofaction
             return PassMail;
         }
     }

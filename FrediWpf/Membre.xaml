@@ -18,31 +18,30 @@
 			<RowDefinition Height="50*"/>
 		</Grid.RowDefinitions>
 		<TextBlock HorizontalAlignment="Left" Margin="56,41,0,0" TextWrapping="Wrap" Text="Espace Membre" VerticalAlignment="Top" Height="65" Width="399" FontFamily="Nueva Std Cond" FontSize="48"/>
-		
+
 		<Button Content="Licence :" HorizontalAlignment="Left" Margin="47,122,0,0" VerticalAlignment="Top" Width="75"/>
 		<TextBox HorizontalAlignment="Left" Height="23" Margin="140,122,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="598" RenderTransformOrigin="0.376,2.917" Grid.ColumnSpan="2"/>
-		
+
 		<Button Content="Nom :" HorizontalAlignment="Left" Margin="47,163,0,0" VerticalAlignment="Top" Width="75"/>
 		<TextBox Name="FName" HorizontalAlignment="Left" Height="23" Margin="140,163,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="211"/>
-		
+
 		<Button Content="Prénom :" HorizontalAlignment="Left" Margin="379,163,0,0" VerticalAlignment="Top" Width="75"/>
 		<TextBox Name="Name" HorizontalAlignment="Left" Height="23" Margin="473,163,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="265" Grid.ColumnSpan="2"/>
-		
-		<Button Content="Adresse :" HorizontalAlignment="Left" Margin="47,211,0,0" VerticalAlignment="Top" Width="75"/>
-		<TextBox Name="RoadName" HorizontalAlignment="Left" Height="23" Margin="140,208,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="598" RenderTransformOrigin="0.376,2.917" Grid.ColumnSpan="2"/>
-		
-		<Button Content="Code Postal :" HorizontalAlignment="Left" Margin="47,264,0,0" VerticalAlignment="Top" Width="75"/>
-		<TextBox Name="CP" HorizontalAlignment="Left" Height="23" Margin="140,261,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-		
-		<Button Content="Ville :" HorizontalAlignment="Left" Margin="379,264,0,0" VerticalAlignment="Top" Width="75"/>
-		<TextBox Name="City" HorizontalAlignment="Left" Height="23" Margin="473,261,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="265" Grid.ColumnSpan="2"/>
-		
-		<Button Content="E-mail :" HorizontalAlignment="Left" Margin="47,312,0,0" VerticalAlignment="Top" Width="75"/>
-		<TextBox Name="Mail" HorizontalAlignment="Left" Height="23" Margin="140,312,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="211"/>
-		
-		<Button Content="Changer de mot de passe" HorizontalAlignment="Left" Margin="379,317,0,0" VerticalAlignment="Top" Width="165" Height="18" Click="ChangePassword"/>
 
-		<Button Name="Valider" Content="Valider" HorizontalAlignment="Left" Margin="491,9,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1" Click="Valider_Btn"/>
-		<Button Name="Retour" Content="Retour" HorizontalAlignment="Left" Margin="258,9,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1" Click="Back_Btn"/>
+		<Button Content="Date de Naissance" HorizontalAlignment="Left" Margin="47,338,0,0" VerticalAlignment="Top" Width="115"/>
+		<DatePicker Name="Date" HorizontalAlignment="Left" Margin="177,334,0,0" VerticalAlignment="Top" Width="174"/>
+
+		<Button Content="Adresse :" HorizontalAlignment="Left" Margin="47,232,0,0" VerticalAlignment="Top" Width="75"/>
+		<TextBox Name="RoadName" HorizontalAlignment="Left" Height="23" Margin="140,229,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="598" RenderTransformOrigin="0.376,2.917" Grid.ColumnSpan="2"/>
+
+		<Button Content="Code Postal :" HorizontalAlignment="Left" Margin="47,285,0,0" VerticalAlignment="Top" Width="75"/>
+		<TextBox Name="CP" HorizontalAlignment="Left" Height="23" Margin="140,282,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+		<Button Content="Ville :" HorizontalAlignment="Left" Margin="379,285,0,0" VerticalAlignment="Top" Width="75"/>
+		<TextBox Name="City" HorizontalAlignment="Left" Height="23" Margin="473,282,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="265" Grid.ColumnSpan="2"/>
+
+		<Button Content="Changer de mot de passe" HorizontalAlignment="Left" Margin="379,338,0,0" VerticalAlignment="Top" Width="165" Height="18" Click="ChangePassword"/>
+
+		<Button Name="Valider" Content="Valider" HorizontalAlignment="Left" Margin="242,0,0,0" VerticalAlignment="Top" Width="318" Grid.Row="1" Click="Valider_Btn"/>
 	</Grid>
 </Page>

@@ -9,11 +9,11 @@
 	<Grid>
 		<TextBlock HorizontalAlignment="Left" Margin="222,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="224" Width="357" FontFamily="Nueva Std Cond" FontSize="48" TextAlignment="Center"><Run Foreground="Navy" Text="Frais de "/><Run Foreground="Navy" Text="D"/><Run Foreground="Navy" Text="éplacement"/><LineBreak/><Run Foreground="Navy" Text=" et"/><Run Foreground="Navy"/><LineBreak/><Run Foreground="Navy" Text="R"/><Run Foreground="Navy" Text="emise d'"/><Run Foreground="Navy" Text="I"/><Run Foreground="Navy" Text="mpôt"/></TextBlock>
 
-		<Button Content="Identifiant" HorizontalAlignment="Left" Margin="239,263,0,0" VerticalAlignment="Top" Width="79" Click="Button_Click"/>
-		<TextBox Name="IdBox"  HorizontalAlignment="Left" Height="23" Margin="341,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+		<Button Content="Identifiant" HorizontalAlignment="Left" Margin="239,263,0,0" VerticalAlignment="Top" Width="79" Click="Id_btn"/>
+		<TextBox Name="IdBox"  HorizontalAlignment="Left" Height="23" Margin="341,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189"/>
 
-		<Button Content="Mot de passe" HorizontalAlignment="Left" Margin="239,304,0,0" VerticalAlignment="Top" Width="79" />
-		<PasswordBox Name="PassBox" HorizontalAlignment="Left" Margin="341,304,0,0" VerticalAlignment="Top" Height="20" Width="120"/>
+		<Button Content="Mot de passe" HorizontalAlignment="Left" Margin="239,304,0,0" VerticalAlignment="Top" Width="79" Click="Mdp_btn" />
+		<TextBox Name="PassBox" HorizontalAlignment="Left" Margin="341,304,0,0" VerticalAlignment="Top" Height="20" Width="189"/>
 
 
 		<Button Content="Valider" HorizontalAlignment="Left" Margin="363,349,0,0" VerticalAlignment="Top" Width="75" Click="Valider_Btn" />

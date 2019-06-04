@@ -21,9 +21,9 @@ namespace FrediWpf
     /// <summary>
     /// Logique d'interaction povur TableauDeBord.xaml
     /// </summary>
-    public partial class TableauDeBord : Page 
+    public partial class TDB : Page 
     {
-        public TableauDeBord()
+        public TDB()
         {
             InitializeComponent();
         }
